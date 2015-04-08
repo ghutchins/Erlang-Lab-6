@@ -1,0 +1,51 @@
+
+CSC 231 Lab 6 - Intermediate Erlang, Part 1 Additional Test Cases
+Georgina Hutchins
+
+
+1. Added 1 additional test case with an odd numbered list of length > 1 to ensure the 
+	pairs properly multiply and then go into proper base case and return the single element
+	correctly
+
+
+2.
+	a) Don't need to add any additional tests. Tester file handles having either list1 or list2
+		empty and testing two lists with different numbers of coefficients.
+		The only additional test that might be needed is handling two empty lists--but nothing
+		necessarily needs to return in that case.
+
+	b) Add test file for base case that has an empty list for input. delete(X,[]). Tester file
+		handles problems that arise when second list is longer than the first, or when one
+		list is empty and the other is not
+
+	c) Need to add 2 tests. polyeval([2,0,4],0) --> X == 0, only return the head of list (Y).
+				polyeval([],7) --> empty list with any input value, returns 0. 
+
+3.
+	a) Add test for empty set. member(4,[]) --> Return false.
+		Tester file handles cases in which value X is in the set, and when it is not.
+
+	b) Add test for empty set. delete(2,[]) --> Returns empty list. 
+		Tester file handles cases in which value to be deleted is not in the list, and
+		when it is in the list and is successfully deleted.
+
+	c) Add test for inserting into the empty set. insert(9,[]) --> Returns the list with
+		only 1 value (9 just inserted).
+
+4.Don't need to add any additional tests since the tester file has a case with 1, 2, and 3 values
+	in the list. The base case is handled dealing with lists of lenth 1 and 2, and the list with
+	3 values successfully returns after going through the recursive case.
+
+5. Add test case with a list that has repeating numbers to ensure the repeated digits are
+	still placed in the correct position in descending order. selectionSort([3,7,7,4,1]).
+
+6.
+	a) Don't need additional test.Tester file has cases with negative and positive values in
+		the list. Function does not handle empty input, so nothing returns if the list
+		is empty -- don't need to add.
+
+	b) Don't need additional tests. Tester file has tests for empty list, list with one short 
+		input, and two cases with input that contains strings of length >4 and >=4.
+
+
+

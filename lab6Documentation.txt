@@ -1,0 +1,82 @@
+
+CSC 231 Lab 6 - Intermediate Erlang, Part 1 Documentation
+Georgina Hutchins
+
+
+1.
+	productofPairs() uses patterns to recursively multiply sequential pairs of integers from an 
+	input list. If the list contains an odd number of integers, the even sets are multiplied,
+	and the odd element is left in its current place.
+
+2.
+	a) polyAdd() uses patterns to add 2 polynomials. The function takes 2 numerical lists as 
+		input and returns 1 list containing the sum of the coefficients from the 2 polynomials.
+		If one of the inputs is empty, the other list is simply returned. 
+
+	b) polyDiff() uses patterns to subtract 2 polynomials. It works in the same way as poly add,
+		but instead returns 1 list with the difference of the polynomial coefficients.
+
+	c) polyEval() takes 2 inputs - a polynomial and a number for which the evaluation is requested.
+		The function uses patterns to implement Horner's Rule for polynomials. The function
+		returns the head + input * polyeval called recursively on the tail.The Wildcard symbol
+		(_) is used to stop warnings for unused values in the function declaration.
+
+3.
+	a) member() uses patterns and takes 2 inputs-- a set and a query item. Member() uses recursion
+		to cycle through the set to determine if the query item is ever at the head. If item is 
+		found, member() returns true, else it returns false.
+
+	b) delete() uses patterns and takes a set and a query item as inputs. The function recursively
+		cycles throug hthe set and deletes query item X from the set if it is present. Else,
+		the original set is returned.
+
+	c) Insert() uses patterns and local variables to insert an item X into a set if it is not
+		already present. It takes item X to add and the set as input, and recursively cycles
+		through the list; if X is not present, it is added to set, else original set is returned.
+
+4.
+	largest() takes 1 input list and returns the largest item in the list.It uses recurision and
+		local variables to reduce the number of calls to head and tail functions.
+
+5.
+	selectionSort() uses patterns, local variables, and recurision to implement a descending
+		selection sort on an input list. It implememts additional functions largest(), 
+		remove(), and a selectionSort with 2 inputs. (input list and sorted list) in order
+		to recursively sort the list. SelectionSort() finds the largest item in the list and places it
+		at the head, while recursively sorting through the rest of the list until every item
+		has been sorted.
+
+	Remove() takes 2 inputs, an item to delete X, and a list to cycle through. It is effectively
+		the same function as delete() from problem 2b, deleting the head of the list if it
+		matches the specified item X, else cycles through the rest of the list. It returns
+		the list after item as been removed, or the original list if the item was not found. 
+
+	selectionSort() with 2 inputs is used to recursively sort the list specified in selectionSort() 
+		function with 1 input. It takes the unsorted list as one argument, and a new sorted
+		list as a second input. Once the first list is empty, the second list has been fully
+		sorted and is returned..
+
+6.
+	a) flipSigns() takes 1 list of real numbers as input and implements the map function
+		to change the sign of all the elements in the list -- positive to negative
+		and vice versa. The function implements map to call worker function flipSign()
+		on each element in the input list.
+
+	flipSign() is a worker function that flips the sign of a single number input. 
+
+	map() takes input function F and list L of [data1,data2,..,dataN] and returns the
+		list [F(data1),F(data2),...,F(dataN)].
+
+	b) truncateWords() takes 1 input of a list of strings and truncates each string so that it
+		is no more than 4 characters long. It is implemented usuing the map function,
+		and worker functions truncate() and chop().
+
+	truncate() is a worker function that takes 1 input list and calls chop()
+		to return a truncated list.
+
+	chop() is a worker function that uses patterns to recursively cut down an input list
+		by 1 each call, until it is the length specified by size S.
+
+
+
+
